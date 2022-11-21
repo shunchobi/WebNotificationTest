@@ -54,7 +54,7 @@ app.get('/push', async (_req, res) => {
 });
 
 // サーバ起動
-const port = 8080;
-app.listen(port, () => {
-  console.log(new Date().toISOString(), `サーバ起動 : http://localhost:${port}/`);
-});
+// const port = 8080;
+// app.listen(port, () => {
+//   console.log(new Date().toISOString(), `サーバ起動 : http://localhost:${port}/`);
+// });
