@@ -6,14 +6,14 @@ const webPush = require('web-push');
 // サーバ
 
 // Push 通知に使用する鍵ペアを読み込んでおく
-const applicationServerKeys = require('./server/application-server-keys.json');
+const applicationServerKeys = require('./application-server-keys.json');
 webPush.setVapidDetails('mailto:example@example.com', applicationServerKeys.publicKey, applicationServerKeys.privateKey);
 
 // サーバ準備
 const app = express();
 app.use(express.urlencoded({ extended: false }));  // POST Body (URL Encoded)
 app.use(express.json());  // POST JSON
-app.use('/', express.static(path.resolve(__dirname, './client')));  // 静的ファイル
+app.use('/', express.static(path.resolve(__dirname, '../client')));  // 静的ファイル
 
 /** @type {Array<PushSubscription>} 通知の送信先情報を控えておく */
 const pushSubscriptions = [];
